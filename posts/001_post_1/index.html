@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="An LLM User">
-<meta name="dcterms.date" content="2024-02-05">
-<meta name="description" content="An example post from a Jupyter notebook">
+<meta name="author" content="Michael Li">
+<meta name="dcterms.date" content="2024-02-04">
+<meta name="description" content="Playing with Dall-e">
 
-<title>A test post – Being Silly with LLMs</title>
+<title>Generating a Profile Picture – Being Silly with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -150,15 +116,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">A test post</h1>
+      <h1 class="title">Generating a Profile Picture</h1>
                   <div>
         <div class="description">
-          An example post from a Jupyter notebook
+          Playing with Dall-e
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">LLMs</div>
-                <div class="quarto-category">API</div>
+                <div class="quarto-category">Dall-E</div>
               </div>
                   </div>
   </div>
@@ -169,14 +134,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>An LLM User </p>
+               <p>Michael Li </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 5, 2024</p>
+        <p class="date">February 4, 2024</p>
       </div>
     </div>
     
@@ -195,52 +160,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="4f6329ef-4131-4b40-9c2a-aa16b5dc69f7" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> load_dotenv()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="aea0f442-f38a-489e-95e7-699b8f07a507" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="st">"gpt-4o"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>system_role <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>initial_prompt <span class="op">=</span> <span class="st">'''</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">        Make a robocall encouraging people to save </span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">        their vote from the current primary and instead vote just in the November general election instead.</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">        The reason is because the Republicans are dominating the narrative in the primary.</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">        Use the style of Joe Biden and use his characteristic vocabulary and phrases.</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">        Make the call a maximum of 30 seconds long.</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">        '''</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> [</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: system_role} ,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: initial_prompt},</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># {"role": "assistant", "content": "" },</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># {"role": "user", "content": "" }</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="4e26444a-970b-404e-be9b-35461d5e275b" class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>completion <span class="op">=</span> client.chat.completions.create(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  model<span class="op">=</span>model,        <span class="co"># the model to use </span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  messages<span class="op">=</span>messages,  <span class="co"># a list of dictionaries with the prompt</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  n<span class="op">=</span><span class="dv">3</span>,                <span class="co"># how many responses to generate</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  temperature<span class="op">=</span><span class="fl">0.7</span>     <span class="co"># temperature parameter</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="22c72d76-b5c3-4ff0-a602-310279f72630" class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> resp <span class="kw">in</span> completion.choices:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(resp.message.content)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="generating-my-profile-picture" class="level2">
+<h2 class="anchored" data-anchor-id="generating-my-profile-picture">Generating my Profile Picture</h2>
+<p>While looking through the Blog content, I was drawn to the idea of generating my own profile pictur using Dall-E 3. I immediately looked into generating my profile picture through some Python scripts in a notebook, but unfortunately, a lot of the documentation I was reviewing for image generation ended up being outdated (curse you openai updates&gt;=1.0.0). I thought it’d be way cooler to run a blog with code that I personally wrote, but I’ll be using Dall-E 3 in OpenAI’s native web app with the 4o model.</p>
+<section id="who-am-i" class="level3">
+<h3 class="anchored" data-anchor-id="who-am-i">Who Am I?</h3>
+<p>To begin, I wanted to explore how Dall-E 3 percieved me based on a few personal details, and build from there.</p>
+<p>So, who am I?:</p>
+<p>I’m an Asian college man in my 21s studying computer science and communications. I have an orange cat and enjoy swimming. I want my profile picture to reflect these parts of my identity.</p>
+<p>Thus, I had GPT 4o prompt engineer the text below for an optimized image of who I described myself to be above:</p>
+<pre><code>A portrait of an Asian college man in his 21s who is a CS and communications major, with an orange cat by his side and a hint of water in the background symbolizing his love for swimming. Realistic digital art, warm lighting.</code></pre>
+<p>Output: <img src="pfp1.png" width="25%"></p>
+<p>This image is a good starting point, but it feels a bit generic. I’d like to inject more personality and a stylized look.</p>
+<p>I now wanted to refine the prompt to specify a more modern, digital illustration style that brings out my personality leading to prompt 2:</p>
+<pre><code>A modern digital illustration of an Asian college man in his 21s, majoring in computer science and communications, accompanied by his vibrant orange cat. The background subtly hints at swimming with abstract water elements. Minimalist design, bold lines, and a clean vector style.</code></pre>
+<p>Output: <img src="pfp2.png" width="25%"></p>
+<p>I appreciate the crisp vector look, and the text is a nice touch. It even made the ears pierced haha. Now, let’s try something with richer details, like a painting style. Thus, we are lead to prompt 3:</p>
+<pre><code>A digital painting of an Asian college man in his 21s who studies computer science and communications, with his friendly orange cat by his side. The scene is set with a serene background featuring a swimming pool and gentle water reflections, evoking a sense of calm and creativity. Rich, warm color palette and artistic brushstrokes.</code></pre>
+<p>Output: <img src="pfp3.png" width="25%"></p>
+<p>Reflecting on this, I tried to avoid changing any details pertaining to the generated ‘asian male’. Note that in each generation, the facial features are relatively similar, with the same exact haircut (same hair part too lol).</p>
+</section>
+</section>
+<section id="deciding-upon-a-profile-picture" class="level2">
+<h2 class="anchored" data-anchor-id="deciding-upon-a-profile-picture">Deciding Upon a Profile Picture</h2>
+<p>Honestly, none of the images spoke to me very much due to their lack of ability to identify how I personally looked. It’s okay though! I’ve decided on something a little different (and better):</p>
+<p><img src="catgpt.png" width="25%"></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
