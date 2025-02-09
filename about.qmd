@@ -5,4 +5,4 @@ about:
   template: jolla
 ---
 
-About this blog
+A little place filled with Michael's musings
