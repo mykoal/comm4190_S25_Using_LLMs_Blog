@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Michael">
+<meta name="dcterms.date" content="2024-02-06">
+<meta name="description" content="Can LLMs build a beloved game with minimal prompting?">
 
-<title>About – Being Silly with LLMs</title>
+<title>LLMs Try to Recreate Pac-Man – Being Silly with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-dc3e1f86f2cf987189eca76553a4dbb2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-dc3e1f86f2cf987189eca76553a4dbb2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,17 +71,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Being Silly with LLMs</span>
     </a>
   </div>
@@ -88,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -109,27 +113,101 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">LLMs Try to Recreate Pac-Man</h1>
+                  <div>
+        <div class="description">
+          Can LLMs build a beloved game with minimal prompting?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+                <div class="quarto-category">code</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Michael </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 6, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.png" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<p>A little place filled with Michael’s musings</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main>  
-</div>
- <!-- /main -->
+
+
+
+<section id="reproducing-pac-man-with-llms" class="level2">
+<h2 class="anchored" data-anchor-id="reproducing-pac-man-with-llms">Reproducing Pac-Man with LLMs</h2>
+<p>I’ve always been interested in LLMs ability to generate code, and the best way to go about doing so. Today, I want to look into how well OpenAI’s 4o, o1, and o3-high, are able to recreate Pac-Man. I will be providing all these models with the same prompt:</p>
+<pre><code>Write a python script that creates a playable version of Pac-Man.</code></pre>
+<p>To begin, 4o was able to recreate the movement functionality within a maze, but failed to capture score, ghosts, or crisp movement mechanics. Moving was fast in a straight line, and the maze seemed to be visually cut off in the pygame window. Overall, 4o understood the assignment, but failed to implement multiple features of the game. It must be noted, though, that 4o mentioned these features, but was unable to implement them all in one prompt.</p>
+<section id="o-pacman" class="level3">
+<h3 class="anchored" data-anchor-id="o-pacman">4o PacMan</h3>
+<p><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTExeWVhaHh5dHNlbnVpdWt2Y3ZsOWh4Nzk5a25hc3Z0NXkzcnhlYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dn8HeHOK7D4sn2WS4y/giphy.gif" class="img-fluid"></p>
+<p>Next, o1 had a better grasp of the features it needed to implement and attempted to do so. As you can see, it did great job of score keeping based on pellets, but didn’t implement ghost movement logic or restart game functionality. The movement was a lot more clean though, allowing for easier direction switching. When reviewing the “though-process” of o1, it seems like it attempted to implement random ghost movement, but failed somewhere along the line, so I’ll at least give it credit for trying haha.</p>
+</section>
+<section id="o1-pacman" class="level3">
+<h3 class="anchored" data-anchor-id="o1-pacman">o1 PacMan</h3>
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWZteXkwcTU3N3N3b3R4dmIzZnVreTlldjlxc2VuaHdyaDVtdG15diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mQI5SaslMV1Qtg2m74/giphy.gif" class="img-fluid"></p>
+<p>Best performance, by far. Failed to implement score, but I’m sure somewhere in its thought window, it decided to implement PacMan with basic functionality, which it did very well. There is a ghost with randomized movement, pellets, clean player movement, and the ability to restart. I wonder how well I could make it if I continued to prompt deeper and deeper with o3!</p>
+</section>
+<section id="o3-high" class="level3">
+<h3 class="anchored" data-anchor-id="o3-high">o3-high</h3>
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDh6dGljMzlrcHV4bnlrdTV4em9jYXB3eDM2YzEwcTJyOThtOXdieiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OVGjYbej4RhPtBB5eb/giphy.gif" class="img-fluid"></p>
+<p>You may notice that the size of each gameboard is different too. This is because each implementation allowed for easy editing. For example, in o3-high, the code was written as:</p>
+<pre><code># ----------------------------
+# Configuration and Maze Setup
+# ----------------------------
+# Define a simple maze layout.
+# Characters meaning:
+#   '#' – wall
+#   '.' – pellet (food)
+#   ' ' – empty corridor
+#   'G' – ghost starting position
+maze_layout = [
+    "####################",
+    "#........#.........#",
+    "#.####.#.#.####.#..#",
+    "#.................G#",
+    "#.####.#####.####..#",
+    "#..................#",
+    "####################"
+]</code></pre>
+<p>Note that o1 thought for 15 seconds, and o3-high thought for <strong>89 seconds</strong>. I’m really excited to see how impressive models can get as they are designed for greater “internal” thinking. However, is this the death of chain of thought prompting? Especially if it’s harder to change a decision a model made 1 minute into thinking in the frame of a 2 minute thought window.</p>
+<p>Watching the evolution of GPT’s programming performance is really nostalgic, especilly since I’ve been using the models to code as they’ve been released. I’m personally super excited for the ‘deep research’ model! Would love to use it if Ann</p>
+<p>I hope you enjoy this style of gifs. I honestly really enjoy exploring the coding capabilities of LLMs, so expect more of these experiments :)</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -150,6 +228,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
