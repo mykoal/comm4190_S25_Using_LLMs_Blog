@@ -2,26 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/index.html</loc>
-    <lastmod>2025-02-12T19:10:38.497Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/001_post_1/index.html</loc>
-    <lastmod>2025-02-12T19:10:38.499Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/002_post/index.html</loc>
-    <lastmod>2025-02-12T19:10:38.503Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/about.html</loc>
-    <lastmod>2025-02-12T19:10:38.497Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/000_test_post/index.html</loc>
-    <lastmod>2025-02-12T19:10:38.498Z</lastmod>
+    <lastmod>2025-02-20T20:42:48.117Z</lastmod>
   </url>
   <url>
     <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/00#_template/index.html</loc>
-    <lastmod>2025-02-12T19:10:38.497Z</lastmod>
+    <lastmod>2025-02-20T20:42:48.118Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/003_post/index.html</loc>
+    <lastmod>2025-02-20T20:42:48.129Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/002_post/index.html</loc>
+    <lastmod>2025-02-20T20:42:48.123Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/about.html</loc>
+    <lastmod>2025-02-20T20:42:48.117Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/000_test_post/index.html</loc>
+    <lastmod>2025-02-20T20:42:48.118Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/001_post/index.html</loc>
+    <lastmod>2025-02-20T20:42:48.120Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/004_post/index.html</loc>
+    <lastmod>2025-02-20T20:42:48.130Z</lastmod>
   </url>
 </urlset>
