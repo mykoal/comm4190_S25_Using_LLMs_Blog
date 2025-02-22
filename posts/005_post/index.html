@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="An LLM User">
-<meta name="dcterms.date" content="2024-02-02">
-<meta name="description" content="An example post from a Jupyter notebook">
+<meta name="author" content="Michael">
+<meta name="dcterms.date" content="2024-02-18">
+<meta name="description" content="Can o3-mini, Sonnet 3.5, and R1 simulate gravity and collisions?">
 
-<title>A test post – Being Silly with LLMs</title>
+<title>LLMs Take on Gravity and Collisions – Being Silly with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,10 +116,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">A test post</h1>
+      <h1 class="title">LLMs Take on Gravity and Collisions</h1>
                   <div>
         <div class="description">
-          An example post from a Jupyter notebook
+          Can o3-mini, Sonnet 3.5, and R1 simulate gravity and collisions?
         </div>
       </div>
                           <div class="quarto-categories">
@@ -136,14 +136,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>An LLM User </p>
+               <p>Michael </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 2, 2024</p>
+        <p class="date">February 18, 2024</p>
       </div>
     </div>
     
@@ -162,8 +162,39 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="do-llms-understand-physics" class="level2">
+<h2 class="anchored" data-anchor-id="do-llms-understand-physics">Do LLMs Understand Physics?</h2>
+<p>I was inspired by a tweet I saw of someone comparing the responses of r1 and o3 for a prompt asking to simulate a ball rolling. The replies were filled with 80% “wow this is so cool, look at the power of AI, it’s the future” filler, 10% was discussing how different LLMs “intepret physics”, and 10% was ragging on how “this isn’t representative of how coding benchmarks work for AI”.</p>
+<p>From these comments, I came to 3 conclusions * The art of “measuring” an AI’s performance is in constant flux * I want to learn more about AI benchmarks * I must write blogs on similar experiments that I run myself</p>
+<p>This blog is an extension of the third conclusion.</p>
+<p>For this experiment, I decided to explore R1, Sonnet 3.5, and o3-mini-high’s responses.</p>
+<p>First, the prompt I ultimately decided on was:</p>
+<blockquote class="blockquote">
+<p>Program a python program that simulates random bouncy shapes dropping into a box. Make sure the shapes are effected by gravity and interact with each other. Do not use an existing package to simulate physics.</p>
+</blockquote>
+<p><strong>Note:</strong> I had to tweak the prompt a bit because all the models opted to use the ‘pymunk’ package which simulates physics… no cheating!!!</p>
+<section id="deepseek-r1" class="level3">
+<h3 class="anchored" data-anchor-id="deepseek-r1">DeepSeek R1</h3>
+<p>DeepSeek’s R1 was the worst performer. I’m not sure if it interpreted gravity as all the shapes have their own gravitational force, but the shapes all stick together upon colliding. I also noticed that R1 intepreted ‘shapes’ as only circles, which was an interesting decision it made. In general, R1 had difficulties implementing physics into the simulation.</p>
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnphajVldTFvN2V4N2Vvd25qamprZDI5bG8xc3JvaGdsc292OTYwOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZvozRFkaXvwQ63u8E5/giphy.gif" class="img-fluid"></p>
+</section>
+<section id="claude-3.5-sonnet" class="level3">
+<h3 class="anchored" data-anchor-id="claude-3.5-sonnet">Claude 3.5 Sonnet</h3>
+<p>Sonnet 3.5… released more than half a year ago, yet still so impressive at coding tasks. While doing a bit worse than o3 (discussed later), it was relatively impressive! It seemed to have opted for squares and circles, generating at random upon user clicks. As for gravity, you can see that shapes bounce more when dropped from higher heights. However, regarding collisions, Sonnet did poorly, having the shapes stick together rather than remain bouncy.</p>
+<p><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzltM200eWxidDVzeTc5Y2I1MzR6d3JrdGh0Y2dyazA0c3FpenZyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P9lHWJmpHYmOanjECq/giphy.gif" class="img-fluid"></p>
+</section>
+<section id="gpt-o3-mini-high" class="level3">
+<h3 class="anchored" data-anchor-id="gpt-o3-mini-high">GPT o3-mini-high</h3>
+<p>The highest performer, and the newest model on the block. The model was able to account for fall distance in the bounce and acceleration in the collisions dependent on both shapes initial velocities. The model also made a similar decision to have the shapes be squares and circles. For all its impressive traits, the model still failed to account for a ‘real-world’ simulation, with some random edge cases occuring, an example being when a square on the floor bounces back up after being collided with from above.</p>
+<p><img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3lmdWxheGRmbm82cWhjcHN4MW9vdWcxOTY0djdhYmJ6Y3F1ZndoeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UqOTWhxpvtPorxXUqN/giphy.gif" class="img-fluid"></p>
+</section>
+</section>
+<section id="future-blog-posts" class="level2">
+<h2 class="anchored" data-anchor-id="future-blog-posts">Future Blog Posts</h2>
+<p>This blog post has inspired me to do more experiments like these to understand the extent to which LLMs understand certain natural phenomena and can simulate them through code. I’d also like to look into how people measure the benchmarks to which these models are graded on, particularly in the realm of coding.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
