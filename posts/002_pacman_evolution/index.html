@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Michael">
+<meta name="dcterms.date" content="2024-02-06">
+<meta name="description" content="Can LLMs build a beloved game with minimal prompting?">
 
-<title>Michael’s Musings – Being Silly with LLMs</title>
+<title>LLMs Try to Recreate Pac-Man – Being Silly with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-811f389b8a180219181a0c464ee78b6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-811f389b8a180219181a0c464ee78b6b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Being Silly with LLMs</span>
     </a>
   </div>
@@ -149,7 +92,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -172,350 +115,99 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Michael’s Musings</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">LLMs Try to Recreate Pac-Man</h1>
+                  <div>
+        <div class="description">
+          Can LLMs build a beloved game with minimal prompting?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+                <div class="quarto-category">code</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Michael </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 6, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="RGFsbC1F">Dall-E <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Y29kZQ==">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="bG9naWM=">logic <span class="quarto-category-count">(5)</span></div><div class="category" data-category="cHJvbXB0aW5n">prompting <span class="quarto-category-count">(7)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="reproducing-pac-man-with-llms" class="level2">
+<h2 class="anchored" data-anchor-id="reproducing-pac-man-with-llms">Reproducing Pac-Man with LLMs</h2>
+<p>I’ve always been interested in LLMs ability to generate code, and the best way to go about doing so. Today, I want to look into how well OpenAI’s 4o, o1, and o3-high, are able to recreate Pac-Man. I will be providing all these models with the same prompt:</p>
+<pre><code>Write a python script that creates a playable version of Pac-Man.</code></pre>
+<p>To begin, 4o was able to recreate the movement functionality within a maze, but failed to capture score, ghosts, or crisp movement mechanics. Moving was fast in a straight line, and the maze seemed to be visually cut off in the pygame window. Overall, 4o understood the assignment, but failed to implement multiple features of the game. It must be noted, though, that 4o mentioned these features, but was unable to implement them all in one prompt.</p>
+<section id="o-pacman" class="level3">
+<h3 class="anchored" data-anchor-id="o-pacman">4o PacMan</h3>
+<p><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTExeWVhaHh5dHNlbnVpdWt2Y3ZsOWh4Nzk5a25hc3Z0NXkzcnhlYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dn8HeHOK7D4sn2WS4y/giphy.gif" class="img-fluid"></p>
+<p>Next, o1 had a better grasp of the features it needed to implement and attempted to do so. As you can see, it did great job of score keeping based on pellets, but didn’t implement ghost movement logic or restart game functionality. The movement was a lot more clean though, allowing for easier direction switching. When reviewing the “though-process” of o1, it seems like it attempted to implement random ghost movement, but failed somewhere along the line, so I’ll at least give it credit for trying haha.</p>
+</section>
+<section id="o1-pacman" class="level3">
+<h3 class="anchored" data-anchor-id="o1-pacman">o1 PacMan</h3>
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWZteXkwcTU3N3N3b3R4dmIzZnVreTlldjlxc2VuaHdyaDVtdG15diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mQI5SaslMV1Qtg2m74/giphy.gif" class="img-fluid"></p>
+<p>Best performance, by far. Failed to implement score, but I’m sure somewhere in its thought window, it decided to implement PacMan with basic functionality, which it did very well. There is a ghost with randomized movement, pellets, clean player movement, and the ability to restart. I wonder how well I could make it if I continued to prompt deeper and deeper with o3!</p>
+</section>
+<section id="o3-high" class="level3">
+<h3 class="anchored" data-anchor-id="o3-high">o3-high</h3>
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDh6dGljMzlrcHV4bnlrdTV4em9jYXB3eDM2YzEwcTJyOThtOXdieiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OVGjYbej4RhPtBB5eb/giphy.gif" class="img-fluid"></p>
+<p>You may notice that the size of each gameboard is different too. This is because each implementation allowed for easy editing. For example, in o3-high, the code was written as:</p>
+<pre><code># ----------------------------
+# Configuration and Maze Setup
+# ----------------------------
+# Define a simple maze layout.
+# Characters meaning:
+#   '#' – wall
+#   '.' – pellet (food)
+#   ' ' – empty corridor
+#   'G' – ghost starting position
+maze_layout = [
+    "####################",
+    "#........#.........#",
+    "#.####.#.#.####.#..#",
+    "#.................G#",
+    "#.####.#####.####..#",
+    "#..................#",
+    "####################"
+]</code></pre>
+<p>Note that o1 thought for 15 seconds, and o3-high thought for <strong>89 seconds</strong>. I’m really excited to see how impressive models can get as they are designed for greater “internal” thinking. However, is this the death of chain of thought prompting? Especially if it’s harder to change a decision a model made 1 minute into thinking in the frame of a 2 minute thought window.</p>
+<p>Watching the evolution of GPT’s programming performance is really nostalgic, especilly since I’ve been using the models to code as they’ve been released. I’m personally super excited for the ‘deep research’ model! Would love to use it if Ann</p>
+<p>I hope you enjoy this style of gifs. I honestly really enjoy exploring the coding capabilities of LLMs, so expect more of these experiments :)</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1708387200000" data-listing-file-modified-sort="1741033253747" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="830">
-<div class="thumbnail">
-<p><a href="./posts/006_r1_internal_dialogue/index.html" class="no-external"></a></p><a href="./posts/006_r1_internal_dialogue/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/006_r1_internal_dialogue/index_files/figure-html/54712f2c-d833-491e-b7c9-89bd1540c7be-2-b7ea82f1-a1a5-454e-bf02-06b1579d05d2.png" alt="Initial Question"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/006_r1_internal_dialogue/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/006_r1_internal_dialogue/index.html" class="no-external">The LLM Who Chats With Itself</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/006_r1_internal_dialogue/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/006_r1_internal_dialogue/index.html" class="no-external">Exploring DeepSeek R1’s internal dialogue feature</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/006_r1_internal_dialogue/index.html" class="no-external">
-<div class="listing-date">
-Feb 20, 2024
-</div>
-<div class="listing-author">
-Michael Li
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1708214400000" data-listing-file-modified-sort="1741033253746" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="474">
-<div class="thumbnail">
-<p><a href="./posts/005_gravity_collisions/index.html" class="no-external"></a></p><a href="./posts/005_gravity_collisions/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/005_gravity_collisions/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/005_gravity_collisions/index.html" class="no-external">LLMs Take on Gravity and Collisions</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/005_gravity_collisions/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/005_gravity_collisions/index.html" class="no-external">Can o3-mini, Sonnet 3.5, and R1 simulate gravity and collisions?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/005_gravity_collisions/index.html" class="no-external">
-<div class="listing-date">
-Feb 18, 2024
-</div>
-<div class="listing-author">
-Michael
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1707782400000" data-listing-file-modified-sort="1741033253746" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1964">
-<div class="thumbnail">
-<p><a href="./posts/004_guardrails_bomb/index.html" class="no-external"></a></p><a href="./posts/004_guardrails_bomb/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/004_guardrails_bomb/index_files/figure-html/3a45a48e-4973-4105-b694-16dd49617fcd-2-9333c51c-f26a-41ef-a251-2e7dbbd770aa.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/004_guardrails_bomb/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004_guardrails_bomb/index.html" class="no-external">Making a Bomb: Testing LLM Guard Rails</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/004_guardrails_bomb/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/004_guardrails_bomb/index.html" class="no-external">Can DeepSeek, a ‘censored model’, tell me how to make a bomb? (in the name of science…)</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/004_guardrails_bomb/index.html" class="no-external">
-<div class="listing-date">
-Feb 13, 2024
-</div>
-<div class="listing-author">
-Michael Li
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2NvZGU=" data-listing-date-sort="1707609600000" data-listing-file-modified-sort="1741033253745" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="824">
-<div class="thumbnail">
-<p><a href="./posts/003_pacman_perfection/index.html" class="no-external"></a></p><a href="./posts/003_pacman_perfection/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/003_pacman_perfection/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_pacman_perfection/index.html" class="no-external">o3-mini Perfects PacMan</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/003_pacman_perfection/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">
-code
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/003_pacman_perfection/index.html" class="no-external">A continuation of LLMs recreating PacMan</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/003_pacman_perfection/index.html" class="no-external">
-<div class="listing-date">
-Feb 11, 2024
-</div>
-<div class="listing-author">
-Michael Li
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2NvZGU=" data-listing-date-sort="1707177600000" data-listing-file-modified-sort="1741033253739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="511">
-<div class="thumbnail">
-<p><a href="./posts/002_pacman_evolution/index.html" class="no-external"></a></p><a href="./posts/002_pacman_evolution/index.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/002_pacman_evolution/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_pacman_evolution/index.html" class="no-external">LLMs Try to Recreate Pac-Man</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/002_pacman_evolution/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y29kZQ=='); return false;">
-code
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/002_pacman_evolution/index.html" class="no-external">Can LLMs build a beloved game with minimal prompting?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/002_pacman_evolution/index.html" class="no-external">
-<div class="listing-date">
-Feb 6, 2024
-</div>
-<div class="listing-author">
-Michael
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="RGFsbC1F" data-listing-date-sort="1707004800000" data-listing-file-modified-sort="1741033253735" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="470">
-<div class="thumbnail">
-<p><a href="./posts/001_pfp_dalle/index.html" class="no-external"></a></p><a href="./posts/001_pfp_dalle/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/001_pfp_dalle/pfp1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/001_pfp_dalle/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_pfp_dalle/index.html" class="no-external">Generating a Profile Picture</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/001_pfp_dalle/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('RGFsbC1F'); return false;">
-Dall-E
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/001_pfp_dalle/index.html" class="no-external">Playing with Dall-e</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/001_pfp_dalle/index.html" class="no-external">
-<div class="listing-date">
-Feb 4, 2024
-</div>
-<div class="listing-author">
-Michael Li
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1741033253733" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/00#_template/index.ipynb" class="no-external"></a></p><a href="./posts/00#_template/index.ipynb" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/00#_template/index.ipynb" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/00#_template/index.ipynb" class="no-external">A test post</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/00#_template/index.ipynb" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/00#_template/index.ipynb" class="no-external">An example post from a Jupyter notebook</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/00#_template/index.ipynb" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1741033253734" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail">
-<p><a href="./posts/000_test_post/index.html" class="no-external"></a></p><a href="./posts/000_test_post/index.html" class="no-external">
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/000_test_post/index.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/000_test_post/index.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
-LLMs
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">
-prompting
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">
-logic
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/000_test_post/index.html" class="no-external">An example post from a Jupyter notebook</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
