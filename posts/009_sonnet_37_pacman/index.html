@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Michael Li">
-<meta name="dcterms.date" content="2025-02-28">
-<meta name="description" content="Revisiting Blog #2 &amp; 3: One Prompt. One Response. How does Claude Sonnet 3.7 fare against the PacMan prompt?">
+<meta name="dcterms.date" content="2025-03-03">
+<meta name="description" content="Revisiting Blog #2: One Prompt. One Response. How does Claude Sonnet 3.7 fare against the PacMan prompt?">
 
 <title>Claude Sonnet 3.7 Programs Pac-Man – Being Silly with LLMs</title>
 <style>
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <h1 class="title">Claude Sonnet 3.7 Programs Pac-Man</h1>
                   <div>
         <div class="description">
-          Revisiting Blog #2 &amp; 3: One Prompt. One Response. How does Claude Sonnet 3.7 fare against the PacMan prompt?
+          Revisiting Blog #2: One Prompt. One Response. How does Claude Sonnet 3.7 fare against the PacMan prompt?
         </div>
       </div>
                           <div class="quarto-categories">
@@ -143,7 +143,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 28, 2025</p>
+        <p class="date">March 3, 2025</p>
       </div>
     </div>
     
@@ -162,25 +162,29 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="revisiting-blog-5-do-llms-understand-physics" class="level2">
-<h2 class="anchored" data-anchor-id="revisiting-blog-5-do-llms-understand-physics">Revisiting Blog #5: Do LLMs Understand Physics?</h2>
-<p>As of February 24th, Anthropic released their new iteration of Claude Sonnet, the 3.7 model! In honor of Blog #5, I wanted to revisit the model’s one-shot capabilities in coding physics with the bouncy shapes prompt:</p>
+<section id="revisiting-blog-2" class="level2">
+<h2 class="anchored" data-anchor-id="revisiting-blog-2">Revisiting Blog #2</h2>
+<p>As of February 24th, Anthropic released their new iteration of Claude Sonnet, the 3.7 model. In blog #8, I had Clause Sonnet 3.7 attempt the physics prompt. This time around, I wanted to see its ability to recreate Pac-Man in one prompt, similar to blog #2. Thus, I fed 3.7 the simple prompt used in blog #2, which encourages the model to be more creative and ‘flex’ more with its response.</p>
 <blockquote class="blockquote">
-<p>Program a python program that simulates random bouncy shapes dropping into a box. Make sure the shapes are effected by gravity and interact with each other. Do not use an existing package to simulate physics.</p>
+<p>Write a python script that creates a playable version of Pac-Man.</p>
 </blockquote>
-<section id="a-refresher-3.5s-performance" class="level3">
-<h3 class="anchored" data-anchor-id="a-refresher-3.5s-performance">A Refresher: 3.5’s performance</h3>
-<p><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzltM200eWxidDVzeTc5Y2I1MzR6d3JrdGh0Y2dyazA0c3FpenZyeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P9lHWJmpHYmOanjECq/giphy.gif" class="img-fluid"></p>
-<p>While 3.5’s performance wasn’t the best out comparably to Deepseek R1 and GPT’s 3o-mini-high, it impressively held its own as a much ‘older’ model (in the relative timeframe of LLM development lol). In blog #5, I noted that the 3.5 accounted somewhat for gravity since shapes bounced more when dropped from higher heights; however, regarding collisions, 3.5 did poorly, having the shapes stick together rather than remain bouncy.</p>
+<section id="slightly-different-than-blog-8-openais-flagship-coding-model-vs.-anthropics" class="level3">
+<h3 class="anchored" data-anchor-id="slightly-different-than-blog-8-openais-flagship-coding-model-vs.-anthropics">Slightly different than blog #8: OpenAI’s Flagship Coding Model vs.&nbsp;Anthropics</h3>
+<p>Since blog #2 only consisted of OpenAI’s GPT models, I think it’s more representative to compare o3-mini-high vs.&nbsp;Claude Sonnet 3.7.</p>
+<p>As a refresher, this is what o3-mini-high cooked up with the prompt compared to Claude Sonnet 3.7:</p>
+<section id="o3-mini-high" class="level4">
+<h4 class="anchored" data-anchor-id="o3-mini-high">o3-mini-high</h4>
+<p><img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDh6dGljMzlrcHV4bnlrdTV4em9jYXB3eDM2YzEwcTJyOThtOXdieiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OVGjYbej4RhPtBB5eb/giphy.gif" class="img-fluid"></p>
 </section>
-<section id="taking-a-look-at-3.7s-performance" class="level3">
-<h3 class="anchored" data-anchor-id="taking-a-look-at-3.7s-performance">Taking a look at 3.7’s performance</h3>
-<p><img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHFvdXUxemhwbndyczkyN2tkYXEydHR3Z3N1ZWVyNXRoMXB4eWRwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ySE4zlKEVHj8DJgVek/giphy.gif" class="img-fluid"> It definitely does better than 3.5! But it also defintely has its own set of problems… The shapes have their own distinct ‘collision’ physics, which is cool, and velocity/acceleration seems to be accounted for with vertical gravity and collisions. However, there are issues with collisions and sliding at the floor of the box.</p>
-<p>Also, I want to note that Claude 3.5 wrote 136 lines of code for the prompt, while 3.7 wrote a whopping <strong>328 lines</strong>, which is a ~3x in lenght of code output. Reading through the code, I realized the 3.7 was structuring the code more formally, following modern programming practices like abstraction and modularity. For example, the 3.7 code had a shape class, with triangle, square, and circle subclasses (all with different behavior, rather than 3.5 having the shapes all share the same behavior). This indicates, at least to me, that Claude is improving signficantly in it’s abilty to independently generate more complex code.</p>
-<p>This was pretty cool seeing the growth of Claude’s model set :)</p>
-<p>Will be revisiting Pac-Man too!</p>
+<section id="claude-sonnet-3.7" class="level4">
+<h4 class="anchored" data-anchor-id="claude-sonnet-3.7">Claude Sonnet 3.7</h4>
+<p><img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGdmdHBtZGlodDF6d2YxM2x2Ync3OTYwYTZtZGRuM2x5NGMxdmtkeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nLLjl5beYTvuvTQ6rP/giphy.gif" class="img-fluid"></p>
+<p>Right off the bat, I notice that Claude produced a more high fidelity version of Pac-Man. Claude incorporated PacMan mouth animations ghost graphics, and power up mechanics, all with a more ‘realistic’ map. However, it failed to reach usability, with the game being near impossible to play. Comparably, o3 got the fundementals down with game movement being incredibley smooth. Similarity wise, Claude blows o3 out the water, but failed to create a playable version. I believe with prompting, both models could get closer, but my hunch is that Claude does it better, especially after seeing how many prompts it took for o3 to get that far in blog #3.</p>
+<p>Also, I want to note that o3 wrote 465 lines of code and Claude wrote 449 lines, which are significant outputs given a short, open-ended prompt. Both sets of code were structured well, following modern programming practices like abstraction and modularity. Similar to my thoughts in the previous blog, I believe that these models are being trained towards perfecting coding tasks, similar to how a software engineer would complete it <em>(but infinitely more cheap and quick…, for better or for worse…)</em>.</p>
+<p>Honestly, it seems like they both have their strengthes and weaknesses in general code writing. There is definetely much testing to be done in terms of more detailed and specific prompts. I’ll be playing around more with Sonnet 3.7 in the following weeks, so hopefully I’ll have a better sense of comparison soon! (I usually code using GPT models). Will definetely write a blog in the future on a coding task using Sonnet 3.7, so stay tuned!</p>
 
 
+</section>
 </section>
 </section>
 

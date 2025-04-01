@@ -2,8 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/010_deep_research/index.html",
       "/posts/009_sonnet_37_pacman/index.html",
       "/posts/008_sonnet_37_physics/index.html",
+      "/posts/007_benchmarks/index.html",
       "/posts/006_r1_internal_dialogue/index.html",
       "/posts/005_gravity_collisions/index.html",
       "/posts/004_guardrails_bomb/index.html",
@@ -11,8 +13,7 @@
       "/posts/002_pacman_evolution/index.html",
       "/posts/001_pfp_dalle/index.html",
       "/posts/00#_template/index.html",
-      "/posts/000_test_post/index.html",
-      "/posts/010_deep_research/index.html"
+      "/posts/000_test_post/index.html"
     ]
   }
 ]
