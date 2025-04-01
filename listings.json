@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/009_sonnet_37_vs_o3/index.html",
+      "/posts/009_sonnet_37_pacman/index.html",
+      "/posts/008_sonnet_37_physics/index.html",
       "/posts/006_r1_internal_dialogue/index.html",
       "/posts/005_gravity_collisions/index.html",
       "/posts/004_guardrails_bomb/index.html",
