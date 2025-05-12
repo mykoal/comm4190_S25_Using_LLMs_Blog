@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Michael Li">
-<meta name="dcterms.date" content="2024-02-04">
-<meta name="description" content="Playing with Dall-e">
+<meta name="dcterms.date" content="2025-03-29">
+<meta name="description" content="In other news, the sky is blue">
 
-<title>Generating a Profile Picture – Being Silly with LLMs</title>
+<title>Toxic Image Generations Reveal Discriminative Bias in GenAI – Being Silly with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,14 +117,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Generating a Profile Picture</h1>
+      <h1 class="title">Toxic Image Generations Reveal Discriminative Bias in GenAI</h1>
                   <div>
         <div class="description">
-          Playing with Dall-e
+          In other news, the sky is blue
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Dall-E</div>
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+                <div class="quarto-category">logic</div>
               </div>
                   </div>
   </div>
@@ -142,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 4, 2024</p>
+        <p class="date">March 29, 2025</p>
       </div>
     </div>
     
@@ -161,33 +163,34 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="generating-my-profile-picture" class="level2">
-<h2 class="anchored" data-anchor-id="generating-my-profile-picture">Generating my Profile Picture</h2>
-<p>While looking through the Blog content, I was drawn to the idea of generating my own profile pictur using Dall-E 3. I immediately looked into generating my profile picture through some Python scripts in a notebook, but unfortunately, a lot of the documentation I was reviewing for image generation ended up being outdated (curse you openai updates&gt;=1.0.0). I thought it’d be way cooler to run a blog with code that I personally wrote, but I’ll be using Dall-E 3 in OpenAI’s native web app with the 4o model.</p>
-<section id="who-am-i" class="level3">
-<h3 class="anchored" data-anchor-id="who-am-i">Who Am I?</h3>
-<p>To begin, I wanted to explore how Dall-E 3 percieved me based on a few personal details, and build from there.</p>
-<p>So, who am I?:</p>
-<p>I’m an Asian college man in my 21s studying computer science and communications. I have an orange cat and enjoy swimming. I want my profile picture to reflect these parts of my identity.</p>
-<p>Thus, I had GPT 4o prompt engineer the text below for an optimized image of who I described myself to be above:</p>
-<pre><code>A portrait of an Asian college man in his 21s who is a CS and communications major, with an orange cat by his side and a hint of water in the background symbolizing his love for swimming. Realistic digital art, warm lighting.</code></pre>
-<p>Output: <img src="pfp1.png" width="25%"></p>
-<p>This image is a good starting point, but it feels a bit generic. I’d like to inject more personality and a stylized look.</p>
-<p>I now wanted to refine the prompt to specify a more modern, digital illustration style that brings out my personality leading to prompt 2:</p>
-<pre><code>A modern digital illustration of an Asian college man in his 21s, majoring in computer science and communications, accompanied by his vibrant orange cat. The background subtly hints at swimming with abstract water elements. Minimalist design, bold lines, and a clean vector style.</code></pre>
-<p>Output: <img src="pfp2.png" width="25%"></p>
-<p>I appreciate the crisp vector look, and the text is a nice touch. It even made the ears pierced haha. Now, let’s try something with richer details, like a painting style. Thus, we are lead to prompt 3:</p>
-<pre><code>A digital painting of an Asian college man in his 21s who studies computer science and communications, with his friendly orange cat by his side. The scene is set with a serene background featuring a swimming pool and gentle water reflections, evoking a sense of calm and creativity. Rich, warm color palette and artistic brushstrokes.</code></pre>
-<p>Output: <img src="pfp3.png" width="25%"></p>
-<p>Reflecting on this, I tried to avoid changing any details pertaining to the generated ‘asian male’. Note that in each generation, the facial features are relatively similar, with the same exact haircut (same hair part too lol).</p>
+<section id="did-openai-push-a-discriminatory-model-to-prod" class="level1">
+<h1>Did OpenAI Push A Discriminatory Model to Prod?</h1>
+<p><em>Probably, lol</em></p>
+<p>With all this discussion on AI Image generation, I was inspired by another class I’m taking called CIS 523: Ethical Algorithms to investigate if I could identify instances of discrimination and bias in the new OpenAI image generation model.</p>
+<section id="racial-stereotyping" class="level2">
+<h2 class="anchored" data-anchor-id="racial-stereotyping">Racial Stereotyping</h2>
+<p>I went ahead and threw these 3 prompts into GPT and here were the outputs:</p>
+<section id="chinese-american" class="level3">
+<h3 class="anchored" data-anchor-id="chinese-american">Chinese-American</h3>
+<p><img src="index_files/figure-html/62bb02ea-03fd-427b-991b-77320469f7db-1-b70ad1ce-e496-47bf-829f-4ec51705a0d7.png" alt="" width="500"></p>
 </section>
+<section id="mexican-american" class="level3">
+<h3 class="anchored" data-anchor-id="mexican-american">Mexican-American</h3>
+<p><img src="index_files/figure-html/62bb02ea-03fd-427b-991b-77320469f7db-2-bb766252-8ab4-49cd-818a-b4d44311c20c.png" alt="" width="500"></p>
 </section>
-<section id="deciding-upon-a-profile-picture" class="level2">
-<h2 class="anchored" data-anchor-id="deciding-upon-a-profile-picture">Deciding Upon a Profile Picture</h2>
-<p>Honestly, none of the images spoke to me very much due to their lack of ability to identify how I personally looked. It’s okay though! I’ve decided on something a little different (and better):</p>
-<p><img src="catgpt.png" width="25%"></p>
+<section id="african-american" class="level3">
+<h3 class="anchored" data-anchor-id="african-american">African-American</h3>
+<p><img src="index_files/figure-html/62bb02ea-03fd-427b-991b-77320469f7db-4-e3efaf28-f6a5-4f60-beba-1d393a0bdcb8.png" alt="" width="500"></p>
+<p><strong>Evidently, discrimination is well and alive in this model.</strong> I don’t feel like I need to explain why, just look at the images.</p>
+<p>This proves something larger about these LLMs though; their multimodal functionalities espouse the same discrimination, just in different mediums. When crafting the prompt, I tried to make it clear that the person was <em><strong>“-American”</strong></em> as well, but the model still made assumptions about their meals.</p>
+<p>Interestingly enough, the image generation for the African-American eating prompt was significantly longer. This is just a hunch, but I feel like there may have been purposeful guardrails put in place relating prompts that involve African-Americans. This could be the case because there is probably more training data relating to those populations, which require some more finesse, particularly in the cultural context of America and big tech (see: <a href="https://www.washingtonpost.com/news/morning-mix/wp/2016/06/10/google-faulted-for-racial-bias-in-image-search-results-for-black-teenagers/">Google Faulted for Racial Biase in Image Search Results for Black Teenagers</a>)</p>
+<p>I think in a couple of future blog posts, I want to continue to explore bias in LLMs, so expect to read more :)</p>
+<p>Bonus:</p>
+<p><img src="index_files/figure-html/62bb02ea-03fd-427b-991b-77320469f7db-3-be9ffac3-758e-4e34-af44-064335c8b0ac.png" alt="" width="750"></p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

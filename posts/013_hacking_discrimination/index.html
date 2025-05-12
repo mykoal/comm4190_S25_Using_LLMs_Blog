@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Michael Li">
-<meta name="dcterms.date" content="2024-02-04">
-<meta name="description" content="Playing with Dall-e">
+<meta name="dcterms.date" content="2025-03-30">
+<meta name="description" content="Spoiler Alert: there’s positive growth!">
 
-<title>Generating a Profile Picture – Being Silly with LLMs</title>
+<title>Making GPT Less Discriminatory – Being Silly with LLMs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,14 +117,16 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Generating a Profile Picture</h1>
+      <h1 class="title">Making GPT Less Discriminatory</h1>
                   <div>
         <div class="description">
-          Playing with Dall-e
+          Spoiler Alert: there’s positive growth!
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Dall-E</div>
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+                <div class="quarto-category">logic</div>
               </div>
                   </div>
   </div>
@@ -142,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 4, 2024</p>
+        <p class="date">March 30, 2025</p>
       </div>
     </div>
     
@@ -161,31 +163,34 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="generating-my-profile-picture" class="level2">
-<h2 class="anchored" data-anchor-id="generating-my-profile-picture">Generating my Profile Picture</h2>
-<p>While looking through the Blog content, I was drawn to the idea of generating my own profile pictur using Dall-E 3. I immediately looked into generating my profile picture through some Python scripts in a notebook, but unfortunately, a lot of the documentation I was reviewing for image generation ended up being outdated (curse you openai updates&gt;=1.0.0). I thought it’d be way cooler to run a blog with code that I personally wrote, but I’ll be using Dall-E 3 in OpenAI’s native web app with the 4o model.</p>
-<section id="who-am-i" class="level3">
-<h3 class="anchored" data-anchor-id="who-am-i">Who Am I?</h3>
-<p>To begin, I wanted to explore how Dall-E 3 percieved me based on a few personal details, and build from there.</p>
-<p>So, who am I?:</p>
-<p>I’m an Asian college man in my 21s studying computer science and communications. I have an orange cat and enjoy swimming. I want my profile picture to reflect these parts of my identity.</p>
-<p>Thus, I had GPT 4o prompt engineer the text below for an optimized image of who I described myself to be above:</p>
-<pre><code>A portrait of an Asian college man in his 21s who is a CS and communications major, with an orange cat by his side and a hint of water in the background symbolizing his love for swimming. Realistic digital art, warm lighting.</code></pre>
-<p>Output: <img src="pfp1.png" width="25%"></p>
-<p>This image is a good starting point, but it feels a bit generic. I’d like to inject more personality and a stylized look.</p>
-<p>I now wanted to refine the prompt to specify a more modern, digital illustration style that brings out my personality leading to prompt 2:</p>
-<pre><code>A modern digital illustration of an Asian college man in his 21s, majoring in computer science and communications, accompanied by his vibrant orange cat. The background subtly hints at swimming with abstract water elements. Minimalist design, bold lines, and a clean vector style.</code></pre>
-<p>Output: <img src="pfp2.png" width="25%"></p>
-<p>I appreciate the crisp vector look, and the text is a nice touch. It even made the ears pierced haha. Now, let’s try something with richer details, like a painting style. Thus, we are lead to prompt 3:</p>
-<pre><code>A digital painting of an Asian college man in his 21s who studies computer science and communications, with his friendly orange cat by his side. The scene is set with a serene background featuring a swimming pool and gentle water reflections, evoking a sense of calm and creativity. Rich, warm color palette and artistic brushstrokes.</code></pre>
-<p>Output: <img src="pfp3.png" width="25%"></p>
-<p>Reflecting on this, I tried to avoid changing any details pertaining to the generated ‘asian male’. Note that in each generation, the facial features are relatively similar, with the same exact haircut (same hair part too lol).</p>
+<section id="lets-cringe-for-a-bit" class="level1">
+<h1>Let’s Cringe for a Bit</h1>
+<section id="exhibit-a-discrimination-towards-women" class="level2">
+<h2 class="anchored" data-anchor-id="exhibit-a-discrimination-towards-women">Exhibit A: Discrimination Towards Women</h2>
+<p><img src="index_files/figure-html/9c13d9bf-cdaa-4299-a5be-ddb724134e08-4-c9d3ec6a-ca51-43f0-8816-0d7e3591267a.png" alt="drawing" width="500"></p>
+</section>
+<section id="exhibit-b-racial-discrimination-p1" class="level2">
+<h2 class="anchored" data-anchor-id="exhibit-b-racial-discrimination-p1">Exhibit B: Racial Discrimination p1</h2>
+<p><img src="index_files/figure-html/9c13d9bf-cdaa-4299-a5be-ddb724134e08-2-88cc47f5-5d3f-4a2d-8f7b-94bc5be12944.png" class="img-fluid"> <img src="index_files/figure-html/9c13d9bf-cdaa-4299-a5be-ddb724134e08-1-7352320a-7ce8-4d3a-a318-ade63701cbfe.png" class="img-fluid"></p>
+</section>
+<section id="exhibit-c-racial-discrimination-p2" class="level2">
+<h2 class="anchored" data-anchor-id="exhibit-c-racial-discrimination-p2">Exhibit C: Racial Discrimination p2</h2>
+<p><img src="index_files/figure-html/9c13d9bf-cdaa-4299-a5be-ddb724134e08-3-b6a6b2be-2c12-4a1c-b041-d5d443efeea2.png" class="img-fluid"></p>
+<p>All these examples illustrate the very real difficulty of bias and discrimination in GPT. Though these images took me a while to brainstorm and prompt into GPT, the responses are immediately jarring.</p>
 </section>
 </section>
-<section id="deciding-upon-a-profile-picture" class="level2">
-<h2 class="anchored" data-anchor-id="deciding-upon-a-profile-picture">Deciding Upon a Profile Picture</h2>
-<p>Honestly, none of the images spoke to me very much due to their lack of ability to identify how I personally looked. It’s okay though! I’ve decided on something a little different (and better):</p>
-<p><img src="catgpt.png" width="25%"></p>
+<section id="background" class="level1">
+<h1>Background</h1>
+<p>As we’ve discussed in class, a LLM is a giant prediction model, making deep learned connections between large swathes of data. In the particular case of text, there is a lot of text out there on the internet that’s discriminatory, and when data like that finds its way into the training set… things like the above happen.</p>
+</section>
+<section id="so-how-do-we-fix-this" class="level1">
+<h1>So How Do We Fix This?</h1>
+<p>First and foremost, better data. It’s important to feed quality data into models to produce good results. The principle of “Garbage in, Garbage out” stands true. Other solutions can be guardrail models that protect against certain prompts and outputs from happening. However, even with precautions, state of the art models like ChatGPT still fall short.</p>
+</section>
+<section id="showerthough-can-llms-learn-racism" class="level1">
+<h1>Showerthough: Can LLMs “Learn” Racism</h1>
+<p>After I wrote this blog, I thought a bit more deeply about how LLMs embed certain connections, leading me to wonder if LLMs ever “learnt” their racism or had physical proof of vector encodings. I will look into this more :)</p>
+<p>I also remember when a AI twitter chat bot quickly became toxic in 2016 when trolls bombarded it with racist and extremist content. Read more here: https://en.wikipedia.org/wiki/Tay_(chatbot).</p>
 
 
 </section>
