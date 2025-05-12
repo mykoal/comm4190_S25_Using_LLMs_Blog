@@ -2,6 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/020_reflecting_on_comm4190/index.html",
+      "/posts/019_coding_system_prompts/index.html",
+      "/posts/018_vibe_coding_a_basic_app/index.html",
+      "/posts/017_AI_agents/index.html",
+      "/posts/016_GPT_memory/index.html",
+      "/posts/015_the_rise_of_vibe_coding/index.html",
       "/posts/014_ip_copyright/index.html",
       "/posts/013_hacking_discrimination/index.html",
       "/posts/012_discriminative_image_gen/index.html",

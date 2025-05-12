@@ -2,66 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/about.html</loc>
-    <lastmod>2025-05-12T02:23:03.027Z</lastmod>
+    <lastmod>2025-05-12T23:14:04.792Z</lastmod>
   </url>
   <url>
     <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/004_guardrails_bomb/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.039Z</lastmod>
+    <lastmod>2025-05-12T23:14:04.804Z</lastmod>
   </url>
   <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/006_r1_internal_dialogue/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.044Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/001_pfp_dalle/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.028Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/009_sonnet_37_pacman/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/005_gravity_collisions/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.043Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/010_deep_research/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.049Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/012_discriminative_image_gen/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.075Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/003_pacman_perfection/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.038Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/002_pacman_evolution/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.032Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/011_4o_image_gen_update/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.059Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/008_sonnet_37_physics/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.044Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/013_hacking_discrimination/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.077Z</lastmod>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/018_vibe_coding_a_basic_app/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.878Z</lastmod>
   </url>
   <url>
     <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/014_ip_copyright/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.111Z</lastmod>
+    <lastmod>2025-05-12T23:14:04.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/016_GPT_memory/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/013_hacking_discrimination/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.841Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/019_coding_system_prompts/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/008_sonnet_37_physics/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/011_4o_image_gen_update/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.824Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/017_AI_agents/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.877Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/012_discriminative_image_gen/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.838Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/003_pacman_perfection/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.803Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/002_pacman_evolution/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.797Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/010_deep_research/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/005_gravity_collisions/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.807Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/015_the_rise_of_vibe_coding/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/009_sonnet_37_pacman/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.812Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/020_reflecting_on_comm4190/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.966Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/001_pfp_dalle/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.793Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/006_r1_internal_dialogue/index.html</loc>
+    <lastmod>2025-05-12T23:14:04.808Z</lastmod>
   </url>
   <url>
     <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/posts/007_benchmarks/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.044Z</lastmod>
+    <lastmod>2025-05-12T23:14:04.809Z</lastmod>
   </url>
   <url>
     <loc>https://mykoal.github.io/comm4190_S25_Using_LLMs_Blog/index.html</loc>
-    <lastmod>2025-05-12T02:23:03.027Z</lastmod>
+    <lastmod>2025-05-12T23:14:04.792Z</lastmod>
   </url>
 </urlset>
